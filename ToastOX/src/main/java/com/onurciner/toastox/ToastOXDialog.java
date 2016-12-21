@@ -143,6 +143,21 @@ public class ToastOXDialog {
             if (build.btn_colorNegative != 0) {
                 vNegative.setTextColor(build.btn_colorNegative);
             }
+
+            if (build.btn_colorNegativeBackground == 0) {
+                TypedValue v = new TypedValue();
+                boolean hasColorPrimary = build.context.getTheme().resolveAttribute(R.attr.colorPrimary, v, true);
+                build.btn_colorNegativeBackground = !hasColorPrimary ? v.data : ContextCompat.getColor(build.context, R.color.colorPrimary);
+            }
+
+            Drawable buttonBackground = UtilsLibrary.createButtonBackgroundDrawable(build.context, build.btn_colorNegativeBackground);
+
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
+                vNegative.setBackground(buttonBackground);
+            } else {
+                // noinspection deprecation
+                vNegative.setBackgroundDrawable(buttonBackground);
+            }
         }
 
         bottomDialog.setContentView(view);
@@ -173,6 +188,8 @@ public class ToastOXDialog {
 
         // Button background colors
         protected int btn_colorPositiveBackground;
+
+        protected int btn_colorNegativeBackground;
 
         // Custom View
         protected View customView;
@@ -249,6 +266,16 @@ public class ToastOXDialog {
 
         public Build onPositive(@NonNull ButtonCallback buttonCallback) {
             this.btn_positive_callback = buttonCallback;
+            return this;
+        }
+
+        public Build setNegativeBackgroundColorResource(@ColorRes int buttonColorRes) {
+            this.btn_colorNegativeBackground = ResourcesCompat.getColor(context.getResources(), buttonColorRes, null);
+            return this;
+        }
+
+        public Build setNegativeBackgroundColor(int color) {
+            this.btn_colorNegativeBackground = color;
             return this;
         }
 
