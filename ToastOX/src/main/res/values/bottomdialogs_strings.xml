@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="define_bottomdialogs" />
+    <string name="library_bottomdialogs_author">Onur Ciner</string>
+    <string name="library_bottomdialogs_authorWebsite">https://www.onurciner.com</string>
+    <string name="library_bottomdialogs_authorGitHub">https://github.com/10uroi</string>
+    <string name="library_bottomdialogs_libraryName">ToastOX</string>
+</resources>
