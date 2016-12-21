@@ -5,7 +5,7 @@
   <a target="_blank" href="https://android-arsenal.com/api?level=14"><img src="https://img.shields.io/badge/API-14%2B-orange.svg"></a>
 </p>
 
-<p align="center">Android Library that shows a customizable Material-based bottom sheet.</p>
+<p align="center">A much nicer toast structure and a customized sub-dialog.</p>
 
 <table align="center">
     <tr>
