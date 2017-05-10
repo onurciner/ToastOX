@@ -78,7 +78,9 @@ dependencies {
     </tr>
 </table>
 <hr><hr>
+
 ### ToastOXDialog
+
 ```Javascript
       new ToastOXDialog.Build(this)
             .setTitle("Your Title")
